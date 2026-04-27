@@ -1,0 +1,19 @@
+[project]
+name = "bot_rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pymupdf>=1.27.2.2",
+    "python-docx>=1.2.0",
+    "pandas>=3.0.1",
+    "yt-dlp>=2026.3.17",
+    "openai-whisper>=20250625",
+    "langid>=1.1.6",
+    "ragcore"
+]
+[tool.setuptools.packages.find]
+exclude = ["files*", "output*", "memory*", "saved_responses*"]
+[tool.uv.sources]
+ragcore = { git = "https://github.com/glemiu6/ragcore" }
