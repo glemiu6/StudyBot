@@ -2,9 +2,11 @@ import sys
 from tqdm import tqdm
 from ingest.file_loader import FileLoader
 from ingest.video_loader import VideoLoader
-from ragcore.pipeline.base_pipeline import BasePipeline
+from pyragcore.pipeline.base_pipeline import BasePipeline
 from utils_io.save import Saver
-from ragcore.ingestion.chunker import Chunker
+from pyragcore.ingestion.chunker import Chunker
+from pyragcore.utils_io.logger import get_logger
+logger=get_logger(__name__)
 
 from utils_io.file_chooser import choose_file
 
@@ -41,7 +43,7 @@ class RagPipeline(BasePipeline):
             metadatas.append(item["metadatas"])
             ids.append(f"{file_id}_chunk_{i}")
 
-        print(f"Chunked into {len(documents)} chunks, embedding...")
+        logger.info(f"Chunked into {len(documents)} chunks, embedding...")
 
         BATCH_SIZE = 64
         all_embeddings = []
