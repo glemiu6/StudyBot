@@ -86,7 +86,7 @@ class VideoLoader:
                 txt= f.read()
                 return {
                     "text": txt,
-                    "metadatas": metadata
+                    "metadata": metadata
                 }
 
         audio_path=self.download_audio(url)
