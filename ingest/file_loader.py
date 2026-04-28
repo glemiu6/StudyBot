@@ -1,6 +1,6 @@
 import hashlib
-from ragcore.ingestion.base_loader import BaseLoader
-from ragcore.exceptions import FileNotSupportedException
+from pyragcore.ingestion.base_loader import BaseLoader
+from pyragcore.exceptions import FileNotSupportedException
 import fitz
 import pandas as pd
 from docx import Document
