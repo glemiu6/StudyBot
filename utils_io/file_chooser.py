@@ -1,6 +1,5 @@
 import glob
 import os
-import sys
 
 
 def choose_file(folder: str = "files") -> str | None:
