@@ -5,7 +5,7 @@ description = "A local RAG pipeline to chat with your documents and YouTube vide
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "pyragcore[all]>=0.1.4",
+    "pyragcore[all]",
     "pymupdf>=1.27.2.2",
     "python-docx>=1.2.0",
     "pandas>=3.0.1",
@@ -16,15 +16,32 @@ dependencies = [
     "torchvision"
 ]
 
-[[tool.uv.index]]
-url = "https://download.pytorch.org/whl/cu128"
-name = "pytorch"
-explicit = true
-
-[tool.uv.sources]
-
-torch = { index = "pytorch" }
-torchvision = { index = "pytorch" }
-
 [tool.setuptools.packages.find]
 include = ["ingest*", "utils_io*"]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cuda", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+torchvision = [
+    { index = "pytorch-cuda", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+environments = [
+    "sys_platform == 'linux'",
+    "sys_platform == 'darwin'",
+]

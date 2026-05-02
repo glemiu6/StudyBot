@@ -2,7 +2,7 @@ import sys
 from tqdm import tqdm
 from ingest.file_loader import FileLoader
 from ingest.video_loader import VideoLoader
-from pyragcore.pipeline.base_pipeline import BasePipeline
+from pyragcore import BasePipeline
 from utils_io.save import Saver
 from pyragcore.ingestion.chunker import Chunker
 from pyragcore.utils_io.logger import get_logger
