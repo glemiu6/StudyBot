@@ -37,7 +37,6 @@ if __name__ == "__main__":
             if query.lower() in ('exit','quit','q'):
                 break
             ans=rag.ask(question=query,source_id=source_id,chat_history=chat_history,stream=True)
-            print(ans)
             chat_history.append({"role":"user","message":query})
             chat_history.append({"role":"assistant","message":ans})
     else:

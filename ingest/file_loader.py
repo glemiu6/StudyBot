@@ -1,5 +1,5 @@
 import hashlib
-from pyragcore import BaseLoader
+from pyragcore.interfaces.base_loader import BaseLoader
 from pyragcore.exceptions import FileNotSupportedException
 import fitz
 import pandas as pd

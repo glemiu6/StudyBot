@@ -5,15 +5,15 @@ description = "A local RAG pipeline to chat with your documents and YouTube vide
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "pyragcore[all]",
-    "pymupdf>=1.27.2.2",
+    "pyragcore[all]==0.3.3",
+    "pymupdf==1.28.2",
     "python-docx>=1.2.0",
-    "pandas>=3.0.1",
+    "pandas==3.0.5",
     "yt-dlp>=2026.3.17",
     "openai-whisper>=20250625",
     "langid>=1.1.6",
     "torch",
-    "torchvision"
+    "torchvision",
 ]
 
 [tool.setuptools.packages.find]
