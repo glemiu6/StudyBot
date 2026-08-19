@@ -1,3 +1,4 @@
+import os
 from pyragcore import RagConfig
 
 try:
@@ -10,20 +11,17 @@ except ImportError:
 my_config = RagConfig(
     device=device,
 
-    # --- embedding backend + model MUST match each other ---
-    # Option A (local, no HF download, needs `ollama pull mxbai-embed-large`):
     embedding_backend="ollama",
     embedding_model="mxbai-embed-large:latest",
 
-    # Option B (sentence-transformers, downloads from HF hub, uses `device` above):
-    # embedding_backend="sentence_transformers",
-    # embedding_model="all-mpnet-base-v2",
+   
+    ollama_base_url=os.environ.get("OLLAMA_BASE_URL","http://localhost:11434"),
 
-    model_name=None,       # set explicitly to skip the interactive choose_model() prompt
+    model_name=os.environ.get("MODEL_NAME", "granite3-dense:8b"),
     metric="cosine",
-    top_k=6,                     # a bit more context for study Q&A
+    top_k=6,
     chunk_size=600,
     chunk_overlap=150,
     stream=True,
-    voice_enabled=False,         # flip True once you're testing voice mode
+    voice_enabled=False,
 )

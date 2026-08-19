@@ -1,10 +1,10 @@
 import sys
 from tqdm import tqdm
 
-from ingest.file_loader import FileLoader
-from ingest.video_loader import VideoLoader
-from utils_io.save import Saver
-from utils_io.file_chooser import choose_file
+from core.ingest.file_loader import FileLoader
+from core.ingest.video_loader import VideoLoader
+from core.utils_io.save import Saver
+from core.utils_io.file_chooser import choose_file
 
 from pyragcore.pipeline.base_pipeline import BasePipeline
 from pyragcore.utils_io.logger import get_logger

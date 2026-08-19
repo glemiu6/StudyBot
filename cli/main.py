@@ -8,7 +8,7 @@ logging.getLogger("urllib3").setLevel(logging.WARNING)
 logging.getLogger("huggingface_hub").setLevel(logging.WARNING)
 logging.getLogger("sentence_transformers").setLevel(logging.WARNING)
 logger = get_logger(__name__)
-from rag_pipeline import RagPipeline
+from core.rag_pipeline import RagPipeline
 import sys
 from pyragcore.exceptions import BotRagException
 

@@ -5,7 +5,7 @@ description = "A local RAG pipeline to chat with your documents and YouTube vide
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "pyragcore[all]==0.3.3",
+    "pyragcore[all]==0.3.4",
     "pymupdf==1.28.2",
     "python-docx>=1.2.0",
     "pandas==3.0.5",
